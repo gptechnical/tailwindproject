@@ -17,8 +17,6 @@ const Nav = () => {
         setIsMobileMenuOpen(false);
       }
 
- 
-
   return (
     <>
   <nav className="container max-w-full bg-black">
@@ -33,9 +31,9 @@ const Nav = () => {
 
             {isDropdownOpen && (
               <ul className='absolute left-0 bg-red-950 p-2 leading-10 w-48'>
-              <li><NavLink to="/service" className="block px-4 py-1 hover:bg-gray-200 hover:text-black">ServiceOne</NavLink></li>
-              <li><NavLink to="/service" className="block px-4 py-1 hover:bg-gray-200 hover:text-black">ServiceOne</NavLink></li>
-              <li><NavLink to="/service" className="block px-4 py-1 hover:bg-gray-200 hover:text-black">ServiceOne</NavLink></li>
+              <li><NavLink to="/serviceone" className="block px-4 py-1 hover:bg-gray-200 hover:text-black">ServiceOne</NavLink></li>
+              <li><NavLink to="/servicetwo" className="block px-4 py-1 hover:bg-gray-200 hover:text-black">ServiceOne</NavLink></li>
+              <li><NavLink to="/servicethree" className="block px-4 py-1 hover:bg-gray-200 hover:text-black">ServiceOne</NavLink></li>
             </ul>
             )}  
             </div>
@@ -54,7 +52,17 @@ const Nav = () => {
             <button onClick={closeMobileMenu}><RiCloseCircleFill /></button>
              <li><NavLink to="/" onClick={closeMobileMenu}>Home</NavLink></li>
              <li><NavLink to="/about" onClick={closeMobileMenu}>About</NavLink></li>
-             <li><NavLink to="/service" onClick={closeMobileMenu}>Service</NavLink></li>
+             <div className='relative' onMouseEnter={()=> setIsDropdownOpen(true)} onMouseLeave={()=>setIsDropdownOpen(false)}>
+            <li><NavLink className='flex items-center justify-center'>Service <span>{isDropdownOpen ? <IoMdArrowDropup/> : <IoMdArrowDropdown/>}</span></NavLink></li>
+
+            {isDropdownOpen && (
+              <ul className='absolute left-0 bg-red-950 p-2 leading-6 w-44'>
+              <li><NavLink to="/serviceone" className="block px-1 py-1 hover:bg-gray-200 hover:text-black" onClick={closeMobileMenu}>ServiceOne</NavLink></li>
+              <li><NavLink to="/servicetwo" className="block px-1 py-1 hover:bg-gray-200 hover:text-black" onClick={closeMobileMenu}>ServiceTwo</NavLink></li>
+              <li><NavLink to="/servicethree" className="block px-1 py-1 hover:bg-gray-200 hover:text-black" onClick={closeMobileMenu}>ServiceThree</NavLink></li>
+            </ul>
+            )}  
+            </div>
               <li><NavLink to="/contact" onClick={closeMobileMenu}>Contact</NavLink></li>
               <li><NavLink to="/login" onClick={closeMobileMenu}>Login</NavLink></li>
             </ul>
