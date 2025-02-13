@@ -56,7 +56,7 @@ const Nav = () => {
             <li><NavLink className='flex items-center justify-center'>Service <span>{isDropdownOpen ? <IoMdArrowDropup/> : <IoMdArrowDropdown/>}</span></NavLink></li>
 
             {isDropdownOpen && (
-              <ul className='absolute left-0 bg-red-950 p-2 leading-6 w-44'>
+            <ul className='absolute left-0 bg-red-950 p-2 leading-6 w-44'>
               <li><NavLink to="/serviceone" className="block px-1 py-1 hover:bg-gray-200 hover:text-black" onClick={closeMobileMenu}>ServiceOne</NavLink></li>
               <li><NavLink to="/servicetwo" className="block px-1 py-1 hover:bg-gray-200 hover:text-black" onClick={closeMobileMenu}>ServiceTwo</NavLink></li>
               <li><NavLink to="/servicethree" className="block px-1 py-1 hover:bg-gray-200 hover:text-black" onClick={closeMobileMenu}>ServiceThree</NavLink></li>
