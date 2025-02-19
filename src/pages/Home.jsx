@@ -1,12 +1,12 @@
-import React from "react";
-import FormValidation from "./LoginForm";
+import React from 'react'
 
 const Home = () => {
   return (
-    <>
-     <FormValidation/>
-    </>
-  );
-};
+    <div>
+      welcome to home page
+    </div>
+  )
+}
 
-export default Home;
+export default Home
+
